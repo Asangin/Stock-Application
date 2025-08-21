@@ -32,8 +32,8 @@ jobs:
 
       - name: Build backend image
         run: |
-          docker build ./backend -t ghcr.io/${{ github.repository }}/backend:${{ github.event.inputs.tag || latest }}
+          docker build ./backend -t ghcr.io/${{ github.repository }}/backend:${{ github.event.inputs.tag || 'latest' }}
 
       - name: Build frontend image
         run: |
-          docker build ./frontend -t ghcr.io/${{ github.repository }}/frontend:${{ github.event.inputs.tag || latest }}
+          docker build ./frontend -t ghcr.io/${{ github.repository }}/frontend:${{ github.event.inputs.tag || 'latest' }}

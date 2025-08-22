@@ -42,7 +42,7 @@ jobs:
           context: .
           push: true
           file: './backend/Dockerfile'
-          tags: ghcr.io/${{ github.repository }}/asangin/stock-application/backend:${{ github.event.inputs.tag || 'latest' }}
+          tags: ghcr.io/asangin/stock-application/backend:${{ github.event.inputs.tag || 'latest' }}
 
       - name: Build and push frontend Docker image
         uses: docker/build-push-action@v6
@@ -50,4 +50,4 @@ jobs:
           context: .
           push: true
           file: './frontend/Dockerfile'
-          tags: ghcr.io/${{ github.repository }}/asangin/stock-application/frontend:${{ github.event.inputs.tag || 'latest' }}
+          tags: ghcr.io/asangin/stock-application/frontend:${{ github.event.inputs.tag || 'latest' }}

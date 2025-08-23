@@ -39,7 +39,7 @@ jobs:
       - name: Build and push backend Docker image
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: ./backend
           push: true
           file: './backend/Dockerfile'
           tags: ghcr.io/asangin/stock-application/backend:${{ github.event.inputs.tag || 'latest' }}
@@ -47,7 +47,7 @@ jobs:
       - name: Build and push frontend Docker image
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: ./frontend
           push: true
           file: './frontend/Dockerfile'
           tags: ghcr.io/asangin/stock-application/frontend:${{ github.event.inputs.tag || 'latest' }}
